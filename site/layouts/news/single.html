@@ -1,20 +1,33 @@
 {{ define "main" }}
 
+<div id="page">
+	<p class="bread"><a href="/">HOME</a>　&gt;　NEWS</p>
+
+	<div class="titles">
+			<div class="symbol inviewSymbolIcon"><img src="/img/symbol.png" alt="Sky Solar Japan"></div>
+			<h2><span clas="fo">N</span>EWS</h2>
+			<div class="line"></div>
+			<p class="sub_title">ニュース</p>
+	</div>
+
   <div id="news">
     <div class="cts">
         <div class="dates">
-            <!-- <p class="cate oshirase">{{ .Params.categories }}</p> -->
-            <p class="date">{{ .Date.Format "2021.3.2" }}</p>
+            <p class="cate {{ .Params.categories }}">{{ .Params.categories }}</p>
+            <p class="date">{{ .Date.Format "2006.1.2" }}</p>
         </div>
 
         <h3>{{ .Title }}</h3>
 
-        <p class="detail">{{ .Content }}</p>
+        <p class="detail">
+          {{ .Content }}
+        </p>
 
-        <!-- {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }} -->
+        {{ if .Params.image }}<div class="photo"><img src="{{ .Params.image }}" alt=""></div>{{ end }}
     </div>
 
     <a href="/news" class="back">一覧に戻る</a>
   </div>
+</div>
 
 {{ end }}
