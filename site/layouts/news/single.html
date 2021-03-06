@@ -3,7 +3,7 @@
   <div id="news">
     <div class="cts">
         <div class="dates">
-            <p class="cate oshirase">{{ .Params.categories }}</p>
+            <!-- <p class="cate oshirase">{{ .Params.categories }}</p> -->
             <p class="date">{{ .Date.Format "2021.3.2" }}</p>
         </div>
 
@@ -11,7 +11,7 @@
 
         <p class="detail">{{ .Content }}</p>
 
-        {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+        <!-- {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }} -->
     </div>
 
     <a href="/news" class="back">一覧に戻る</a>

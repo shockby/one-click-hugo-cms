@@ -3,7 +3,6 @@ languageCode = "ja-jp"
 languageLang = "ja"
 title = "スカイソーラージャパン -Sky Solar Japan-"
 hasCJKLanguage = true
-relativeurls = true
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:

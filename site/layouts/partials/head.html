@@ -16,8 +16,11 @@
 
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
 
-	<link rel="stylesheet" type="text/css" media="all" href="css/config.css"/><link rel="stylesheet" type="text/css" media="all" href="css/pc.css"/><link rel="stylesheet" type="text/css" media="all" href="css/tb.css"/><link rel="stylesheet" type="text/css" media="all" href="css/sp.css"/>
-	<link rel="stylesheet" type="text/css" media="all" href="css/swiper.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/config.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/pc.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/tb.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/sp.css"/>
+	<link rel="stylesheet" type="text/css" media="all" href="/css/swiper.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="/img/favicon.ico"/><link rel="apple-touch-icon-precomposed" href="https://www.skysolarjapan.co.jp/img/apple_touch_icon.png"/>
