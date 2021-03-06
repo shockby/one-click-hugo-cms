@@ -1,0 +1,79 @@
+
+<!--JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/swiper.min.js"></script>
+<script src="/js/swiper_trigger.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/jquery.inview.js"></script>
+<script src="/js/inview_trigger.js"></script>
+<script src="/js/lazyload.min.js"></script>
+
+<!--LAZYLOAD-->
+<script>
+	lazyload();
+</script>
+
+<!--MENU-->
+<script>
+$(function(){
+    var scrollpos;
+    $('.nav_btn').on('click', function(){
+        scrollpos = $(window).scrollTop();
+        $('body').addClass('fixed').css({'top': -scrollpos});
+        $('.grobal_nav').toggleClass('active');
+		$('.nav_close').slideToggle('fast');
+    });
+    $('.nav_close').on('click', function(){
+        $('body').removeClass('fixed').css({'top': 0});
+        window.scrollTo( 0 , scrollpos );
+        $('.grobal_nav').removeClass('active');
+		$('.nav_close').toggle('fast');
+    });
+});
+</script>
+
+
+<!--COUNT-->
+<script>
+$(function(){
+    countStart("#num1a", "count1a", 65);
+    countStart("#num1b", "count1b", 101637);
+    countStart("#num2a", "count2a", 12);
+    countStart("#num2b", "count2b", 113665);
+    countStart("#num3a", "count3a", 111800000);
+    countStart("#num3b", "count3b", 555,000);
+});
+
+function countStart(targetId, countCls, maxVal) {
+	var animationFlag = false;
+	$(window).on('scroll',function(){
+		$(targetId).each(function(){
+			var imgPos = $(this).offset().top;
+			var scroll = $(window).scrollTop();
+			var windowHeight = $(window).height() / 1.1;
+			if (scroll > imgPos - windowHeight){
+
+				if(!animationFlag) {
+					animationFlag = true;
+					num(countCls, maxVal);
+				} else {
+					return false;
+				}
+			}
+		});
+	});
+}
+
+function num(countCls, maxVal) {
+	$({countCls: 0}).animate({countCls: maxVal}, {
+		duration: 1500,
+		easing: 'linear',
+		progress: function() {
+			$('.' + countCls).text(Math.ceil(this.countCls).toLocaleString());
+		},
+		complete: function(){
+			$('.' + countCls).text(maxVal.toLocaleString());
+		}
+	});
+}
+</script>
