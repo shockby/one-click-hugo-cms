@@ -13,140 +13,32 @@
 			<p class="sub_title">ニュース</p>
 	</div><!--titles-->
 
-
-	<!--NEWS-->
 	<div id="news">
+		<div class="topics">
+			{{ range (.Paginator 10).Pages }}
 
-			<div class="topics">
+			<div class="info">
+				<div class="topic">
+						<div class="dates">
+								<p class="date">{{ .Date.Format "2006.1.2" }}</p>
+								<p class="cate {{ .Params.categories }}">{{ .Params.categories }}</p>
+						</div><!--dates-->
 
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2021.3.2</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20210302">【弊社を装った不審電話勧誘にご注意ください】</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
+						<p class="title">
+							{{ if .Content }}
+								<a href="{{ .Permalink }}">{{ .Title }}</a>
+							{{ else }}
+								{{ .Title }}
+							{{ end }}
+						</p>
+				</div><!--topic-->
+				<div class="arrow"></div>
+			</div><!--info-->
 
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2021.1.28</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20210128">新設工事進捗について【岩手県軽米尊坊】（更新）</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
+			{{ end }}
+		</div>
 
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2021.1.8</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20210108">新設工事進捗について【岩手県軽米尊坊】</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.12.25</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20201225">SSJプロジェクトボンド　格付け取得について</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.11.5</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/img/321753055.pdf" target="_blank">SSJ軽米高家太陽光発電所、グリーンローン契約締結について</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.10.1</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20201001">弊社太陽光発電所ポートフォリオを裏付とした資金調達について</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.9.11</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title"><a href="/news/news_20200911">地権者説明会を開催いたしました。【岩手県軽米高家】</a></p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.6.1</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title">ホームページをリニューアルいたしました。</p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.5.29</p>
-											<p class="cate renkei">連携開始</p>
-									</div><!--dates-->
-									<p class="title">岩手県奥州市岩谷堂太陽光発電所が連系しました。</p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.5.25</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title">事務所が東京都港区汐留に移転しました。</p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-
-					<div class="info">
-							<div class="topic">
-									<div class="dates">
-											<p class="date">2020.5.15</p>
-											<p class="cate oshirase">お知らせ</p>
-									</div><!--dates-->
-									<p class="title">関係各位へのマスク配布を決定。</p>
-							</div><!--topic-->
-							<div class="arrow"></div>
-					</div><!--info-->
-	</div><!--topics-->
-
-	<div class="pagenation">
-			<p class="none">BACK</p>
-			<p class="now">1</p>
-			<p><a href="/news/newslist_2">2</a></p>
-			<p><a href="/news/newslist_2">NEXT</a></p>
-	</div><!--pagenation-->
+		{{ partial "pagination" . }}
 
 	</div><!--news-->
 
