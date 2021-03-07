@@ -1,0 +1,11 @@
+{{ $category := .Params.categories }}
+{{ $category_ja := "" }}
+{{ if eq $category "oshirase" }}
+{{ $category_ja = "お知らせ" }}
+{{ else if eq $category "renkei" }}
+{{ $category_ja = "連携開始" }}
+{{ else }}
+{{ $category_ja = $category }}
+{{ end }}
+
+<p class="cate {{ $category }}">{{ $category_ja }}</p>

@@ -1,53 +1,30 @@
-<footer class="bg-black ph3 pv4 white">
+<div class="footer_bg"></div>
 
-	<div class="mw7 center pt3">
+<footer>
+	<div class="footer_cts">
+			<div class="company">
+					<div class="foot_logo"><img src="/img/logo.png" alt="Sky Solar Japan"></div>
+					<p class="address">〒105-7108 <br class="sp">東京都港区東新橋1-5-2 汐留シティセンター 8F</p>
+					<div class="tel"><img src="/img/foot_tel.png" alt="03-5275-3470"></div>
+					<div class="mail"><img src="/img/foot_mail.png" alt="info@skysolar.co.jp"></div>
+			</div><!--company-->
 
-		<div class="measure-narrow center mb4">
+			<div class="links">
+							<p class="link">
+									<a href="message/">MESSAGE</a>
+									<a href="business/">BUSINESS</a>
+									<a href="project/">PROJECT</a>
+									<a href="esg/">ESG</a>
+									<span>VISION</span>
+									<a href="news/">NEWS</a>
+									<a href="about/">ABOUT US</a>
+									<!--<a href="recruit/">RECRUIT</a>-->
+									<a href="#top">HOME</a>
+							</p><!--link-->
 
-			<img src="/img/logo.svg" alt="Kaldi logo" class="db w4 center mb4 br0">
-			<p class="f3 lh-title light-gray b tc mb2">Newsletter subscribe</p>
-			<p>Get awesome news from us in your inbox every two weeks. Be the first to learn about new products.</p>
+							<p class="ir"><a href="http://ir.skysolarholdings.com/" target="_blank">IR情報</a></p>
 
-			{{ partial "newsletter-form" . }}
-
-		</div>
-
-		<div class="flex-ns justify-between">
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
-				<ul class="mb3">
-					<li><a href="/" class="link">Home</a></li>
-					<li><a href="/products" class="link">Our products</a></li>
-					<li><a href="/values" class="link">About</a></li>
-					<li><a href="/news" class="link">Blog</a></li>
-					<li><a href="/contact" class="link">Contact</a></li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
-				<ul class="mb3">
-					<li><a href="/news/jamaica-blue/" class="link">Latest offers</a></li>
-					<li><a href="/contact" class="link">Schedule and appointment</a></li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-				<ul class="mhn2">
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-vimeo") }}
-				</ul>
-			</div>
-
-		</div>
-	</div>
-
+							<p class="copyright">Copyright&copy;<script>new Date().getFullYear()>2010&&document.write(+new Date().getFullYear());</script>. Sky Solar Japan. <br class="sp">All Rights Reserved.</p>
+			</div><!--links-->
+	</div><!--footer_cts-->
 </footer>
-
-{{ partial "svg" . }}
-
-<script src="/app.js"></script>

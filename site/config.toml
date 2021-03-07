@@ -1,9 +1,22 @@
+defaultContentLanguage = "ja"
 baseurl = "/"
-languageCode = "ja-JP"
+languageCode = "ja-jp"
 languageLang = "ja"
-title = "Sky Solar Japan"
+
+
+
+hasCJKLanguage = true
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[languages]
+[languages.ja]
+title = "スカイソーラージャパン -Sky Solar Japan-"
+dateFormat = "2006年01月02日"
+
+[languages.en]
+title = "FSky Solar Japan"
+dateFormat = "Jan. 2, 2006"

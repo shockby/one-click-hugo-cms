@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+
+
+<!--PAGE-->
+<div id="page">
+	<p class="bread"><a href="../">HOME</a>　&gt;　NEWS</p>
+
+	<div class="titles">
+			<div class="symbol inviewSymbolIcon"><img src="/img/symbol.png" alt="Sky Solar Japan"></div>
+			<h2><span clas="fo">N</span>EWS</h2>
+			<div class="line"></div>
+			<p class="sub_title">ニュース</p>
+	</div><!--titles-->
+
+	<div id="news">
+		<div class="topics">
+			{{ range (.Paginator 10).Pages }}
+
+			<div class="info">
+				<div class="topic">
+						<div class="dates">
+								<p class="date">{{ .Date.Format "2006.1.2" }}</p>
+								{{ partial "category" . }}
+						</div><!--dates-->
+
+						<p class="title">
+							{{ if .Content }}
+								<a href="{{ .Permalink }}">{{ .Title }}</a>
+							{{ else }}
+								{{ .Title }}
+							{{ end }}
+						</p>
+				</div><!--topic-->
+				<div class="arrow"></div>
+			</div>
+
+			{{ end }}
+		</div>
+
+		{{ partial "pagination" . }}
+
+	</div><!--news-->
+
+</div><!--page-->
+
+{{ end }}
