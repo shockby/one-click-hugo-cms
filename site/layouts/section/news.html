@@ -21,7 +21,7 @@
 				<div class="topic">
 						<div class="dates">
 								<p class="date">{{ .Date.Format "2006.1.2" }}</p>
-								<p class="cate {{ .Params.categories }}">{{ .Params.categories }}</p>
+								{{ partial "category" . }}
 						</div><!--dates-->
 
 						<p class="title">
@@ -33,7 +33,7 @@
 						</p>
 				</div><!--topic-->
 				<div class="arrow"></div>
-			</div><!--info-->
+			</div>
 
 			{{ end }}
 		</div>

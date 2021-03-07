@@ -13,7 +13,7 @@
   <div id="news">
     <div class="cts">
         <div class="dates">
-            <p class="cate {{ .Params.categories }}">{{ .Params.categories }}</p>
+            {{ partial "category" . }}
             <p class="date">{{ .Date.Format "2006.1.2" }}</p>
         </div>
 
